@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #050816;
+}
+
+.form-container {
+    width: 380px;
+    padding: 35px;
+    background: #0b1020;
+    border: 2px solid #ff00f2;
+    border-radius: 15px;
+
+    /* Brilho ao redor do formulário */
+    box-shadow:
+        0 0 5px #ff00bf,
+        0 0 15px #e22d97,
+        0 0 30px rgba(221, 12, 221, 0.5);
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+
+    /* Brilho do título */
+    text-shadow:
+        0 0 5px #f38bcf,
+        0 0 15px #ec82c7;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e4d0dd;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+
+    background: #080d1a;
+    color: #ffffff;
+
+    border: 1px solid #e93caf;
+    border-radius: 8px;
+    outline: none;
+
+    /* Brilho dos campos */
+    box-shadow:
+        0 0 5px #e93caf,
+        inset 0 0 5px rgba(0, 234, 255, 0.2);
+
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #777;
+}
+
+input:focus {
+    border-color: #ffffff;
+
+    box-shadow:
+        0 0 8px #00eaff,
+        0 0 20px #00eaff,
+        inset 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #d633a0;
+    color: #050816;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px #e93caf,
+        0 0 25px #;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffffff;
+
+    box-shadow:
+        0 0 10px #fab9ec,
+        0 0 25px #960565,
+        0 0 50px #881658;
+
+    transform: scale(1.01);
+}
