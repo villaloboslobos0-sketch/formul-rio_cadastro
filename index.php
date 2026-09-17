@@ -36,21 +36,23 @@
         </form>
     </div>
 
-    <?php
+<?php
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $telefone = $_POST["telefone"];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $telefone = $_POST["telefone"];
 
-        echo "<p class = 'mensagem'>Nome: " . $nome . "</p>";
-        echo "<p class= 'mensagem'>Email recebido: " . $email . "</p>";
-        echo "<p class= 'mensagem'>Telefone: " . $telefone . "</p>";
+    echo "<div class='mensagem'>";
+    echo "Nome: " . $nome . "<br>";
+    echo "E-mail: " . $email . "<br>";
+    echo "Telefone: " . $telefone;
+    echo "</div>";
 
-    }
+}
 
-    ?>
+?>
 
 </body>
 </html>
