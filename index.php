@@ -40,9 +40,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
 
-        $email = $_POST["email"];
-
-        echo "Email recebido: " . $email;
+        echo "<p class= 'mensagem'>Email recebido: " . $email . "</p>";
 
     }
 
