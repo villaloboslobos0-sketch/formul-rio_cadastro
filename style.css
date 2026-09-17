@@ -13,6 +13,11 @@ body {
     background: #050816;
 }
 
+.mensagem {
+  color: white;
+  font-size: 18px;
+}
+
 .form-container {
     width: 380px;
     padding: 35px;
