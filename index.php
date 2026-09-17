@@ -40,9 +40,13 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
 
-         $email = $_POST["email"];
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $telefone = $_POST["telefone"];
 
+        echo "<p class = 'mensagem'>Nome: " . $nome . "</p>";
         echo "<p class= 'mensagem'>Email recebido: " . $email . "</p>";
+        echo "<p class= 'mensagem'>Telefone: " . $telefone . "</p>";
 
     }
 
