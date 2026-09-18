@@ -44,11 +44,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $telefone = $_POST["telefone"];
 
-    echo "<div class='mensagem'>";
-    echo "Nome: " . $nome . "<br>";
-    echo "E-mail: " . $email . "<br>";
-    echo "Telefone: " . $telefone;
-    echo "</div>";
+    // Obtém a conexão configurada na Render
+    $databaseUrl = getenv("DATABASE_URL");
+
+    // Conecta ao PostgreSQL
+    $conexao = pg_connect($databaseUrl);
+
+    // Salva o e-mail no banco
+    pg_query_params(
+        $conexao,
+        "INSERT INTO usuarios (email) VALUES ($1)",
+        array($email)
+    );
+
+    // Mostra a confirmação
+    echo "Cadastro realizado com sucesso!";
 
 }
 
