@@ -44,17 +44,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $telefone = $_POST["telefone"];
 
-    // Obtém a conexão configurada na Render
+     // Obtém a conexão configurada na Render
     $databaseUrl = getenv("DATABASE_URL");
 
     // Conecta ao PostgreSQL
     $conexao = pg_connect($databaseUrl);
 
-    // Salva o e-mail no banco
-    pg_query_params(
+    // Verifica se conseguiu conectar
+    if (!$conexao) {
+        die("Erro ao conectar ao banco de dados.");
+    }
+
+    // Salva nome, email e telefone no banco
+    $resultado = pg_query_params(
         $conexao,
-        "INSERT INTO usuarios (email) VALUES ($1)",
-        array($email)
+        "INSERT INTO usuarios (nome, email, telefone) VALUES ($1, $2, $3)",
+        array($nome, $email, $telefone)
     );
 
     // Mostra a confirmação
